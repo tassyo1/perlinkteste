@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using PerlinkTeste.Data.Repository;
 
 namespace PerlinkTeste
 {
@@ -23,6 +24,8 @@ namespace PerlinkTeste
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IEstadoRepository, EstadoRepository>();
+            services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddMvc();
         }
 

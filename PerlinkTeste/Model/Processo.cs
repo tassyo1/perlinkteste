@@ -13,5 +13,6 @@ namespace PerlinkTeste.Model
         public Decimal Valor { get; set; }
         public bool Status { get; set; }
         public int EstadoId { get; set; }
+        public int ClienteId { get; set; }
     }
 }
