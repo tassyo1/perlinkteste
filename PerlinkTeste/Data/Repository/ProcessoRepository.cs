@@ -9,7 +9,7 @@ namespace PerlinkTeste.Data.Repository
     public class ProcessoRepository : IProcessoRepository
     {
 
-        IList<Processo> processos = new List<Processo>();
+        IList<Processo> processos;
 
         public IList<Processo> GetListaProcessos()
         {
@@ -26,9 +26,6 @@ namespace PerlinkTeste.Data.Repository
             processos.Add(processo);
         }
 
-        public IList<Processo> GetProcessosAtivos()
-        {
-            return processos.Where(p => p.Status == true).ToList();
-        }
+       
     }
 }

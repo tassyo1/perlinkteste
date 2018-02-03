@@ -10,7 +10,6 @@ namespace PerlinkTeste.Data.Repository
     {
         IList<Processo> GetProcessoPorClienteId(int id);
         void InsertProcesso(Processo processo);
-        IList<Processo> GetProcessosAtivos();
         IList<Processo> GetListaProcessos();
     }
 }
