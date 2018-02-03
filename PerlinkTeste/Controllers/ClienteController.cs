@@ -13,17 +13,23 @@ namespace PerlinkTeste.Controllers
     [Route("api/Cliente")]
     public class ClienteController : Controller
     {
-        IClienteRepository clientes;
+        IClienteRepository clientesRepo;
 
         public ClienteController(IClienteRepository clienteRepository)
         {
-            clientes = clienteRepository;
+            clientesRepo = clienteRepository;
         }
 
         [HttpGet]
         public IEnumerable<Cliente> GetClientes()
         {
-            return clientes.GetAllClientes();
+            return clientesRepo.GetAllClientes();
+        }
+
+        [HttpPost]
+        public void PostCliente([FromBody] Cliente cliente)
+        {
+            clientesRepo.InsertCliente(cliente);
         }
 
     }

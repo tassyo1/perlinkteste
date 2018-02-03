@@ -9,5 +9,6 @@ namespace PerlinkTeste.Data.Repository
     public interface IProcessoRepository
     {
         IList<Processo> GetProcessoPorClienteId(int id);
+        void InsertProcesso(Processo processo);
     }
 }

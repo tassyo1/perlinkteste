@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PerlinkTeste.Model;
+using PerlinkTeste.Data.Repository;
 
 
 namespace PerlinkTeste.Controllers
@@ -13,18 +14,23 @@ namespace PerlinkTeste.Controllers
     [Route("api/Processo")]
     public class ProcessoController : Controller
     {
-       
+        IProcessoRepository processoRepository;
+
+        public ProcessoController(IProcessoRepository processoRepository)
+        {
+            this.processoRepository = processoRepository;
+        }
 
         [HttpPost]
         public void PostProcesso([FromBody]Processo processo)
         {
-            processos.Add(processo);
+            processoRepository.InsertProcesso(processo);
         }
 
-        public IEnumerable<Processo> GetProcessosAtivos()
-        {
-            return processos;
-        }
+      //  public IEnumerable<Processo> GetProcessosAtivos()
+        //{
+            
+        //}
 
         
     }

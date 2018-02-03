@@ -11,5 +11,6 @@ namespace PerlinkTeste.Data.Repository
         IList<Cliente> GetAllClientes();
         Cliente GetClientePorId(int clienteId);
         Cliente GetClientePorNome(string nome);
+        void InsertCliente(Cliente cliente);
     }
 }

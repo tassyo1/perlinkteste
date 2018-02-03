@@ -34,5 +34,10 @@ namespace PerlinkTeste.Data.Repository
         {
             return Clientes.Where(c => c.Nome == nome).FirstOrDefault();
         }
+
+        public void InsertCliente(Cliente cliente)
+        {
+            Clientes.Add(cliente);
+        }
     }
 }
