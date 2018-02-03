@@ -9,5 +9,6 @@ namespace PerlinkTeste.Data.Repository
     public interface IEstadoRepository
     {
         Estado GetEstadoPorNome(string nome);
+        IList<Estado> GetListaEstados();
     }
 }

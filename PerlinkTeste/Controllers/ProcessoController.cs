@@ -27,10 +27,10 @@ namespace PerlinkTeste.Controllers
             processoRepository.InsertProcesso(processo);
         }
 
-      //  public IEnumerable<Processo> GetProcessosAtivos()
-        //{
-            
-        //}
+        public IEnumerable<Processo> GetProcessosAtivos()
+        {
+            return processoRepository.GetProcessosAtivos();
+        }
 
         
     }

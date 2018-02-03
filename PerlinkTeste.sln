@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerlinkTeste", "PerlinkTeste\PerlinkTeste.csproj", "{F030C0C6-A9C1-4992-88B2-ECF1C808D171}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PerlinkTeste", "PerlinkTeste\PerlinkTeste.csproj", "{F030C0C6-A9C1-4992-88B2-ECF1C808D171}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerlinkTeste.Tests", "PerlinkTeste.Tests\PerlinkTeste.Tests.csproj", "{C4EE2281-2D1B-4930-AFCC-E01A713DC4EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F030C0C6-A9C1-4992-88B2-ECF1C808D171}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F030C0C6-A9C1-4992-88B2-ECF1C808D171}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F030C0C6-A9C1-4992-88B2-ECF1C808D171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4EE2281-2D1B-4930-AFCC-E01A713DC4EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4EE2281-2D1B-4930-AFCC-E01A713DC4EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4EE2281-2D1B-4930-AFCC-E01A713DC4EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4EE2281-2D1B-4930-AFCC-E01A713DC4EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
