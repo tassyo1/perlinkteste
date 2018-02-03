@@ -26,6 +26,7 @@ namespace PerlinkTeste
         {
             services.AddScoped<IEstadoRepository, EstadoRepository>();
             services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<IProcessoRepository, ProcessoRepository>();
             services.AddMvc();
         }
 

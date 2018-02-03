@@ -11,7 +11,7 @@ using PerlinkTeste.Data.Repository;
 namespace PerlinkTeste.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Processo")]
+    [Route("api/Processos")]
     public class ProcessoController : Controller
     {
         IProcessoRepository processoRepository;
@@ -27,44 +27,45 @@ namespace PerlinkTeste.Controllers
             processoRepository.InsertProcesso(processo);
         }
 
-        [HttpGet]
+        [HttpGet("ativos")]
         public IEnumerable<Processo> GetProcessosAtivos()
         {
             return processoRepository.GetListaProcessos().Where(p => p.Status == true).ToList();
         }
 
-        [HttpGet]
-        public IEnumerable<Processo> GetProcessoPorEstadoPorCliente(int estadoId, int clienteId)
+        [HttpGet("estado/{estadoId}/cliente/{clienteId}")]
+        public IEnumerable<Processo> GetProcessoPorEstadoPorCliente([FromRoute]int estadoId, [FromRoute] int clienteId)
         {
             return processoRepository.GetListaProcessos()
                 .Where(p => p.EstadoId == estadoId && p.ClienteId == clienteId);
         }
 
-        [HttpGet]
-        public IEnumerable<Processo> GetProcessoValorMaiorQue(Decimal valor)
+        [HttpGet("valor-maior-que/{valor}")]
+        public IEnumerable<Processo> GetProcessoValorMaiorQue( Decimal valor)
         {
             return processoRepository.GetListaProcessos()
                 .Where(p => p.Valor > valor);
         }
 
-        [HttpGet]
+        [HttpGet("mes/{mes}/ano/{ano}")]
         public IEnumerable<Processo> GetProcessoPorMesAno(int mes, int ano)
         {
             return processoRepository.GetListaProcessos()
                 .Where(p => p.DataInicio.Month == mes && p.DataInicio.Year == ano);
         }
 
-        [HttpGet]
-        public IEnumerable<Processo> GetProcessosPorEstadoCliente(Cliente cliente)
+        [HttpGet("cliente-estado")]
+        public IEnumerable<Processo> GetProcessosPorEstadoCliente([FromBody]Cliente cliente)
         {
             return processoRepository.GetListaProcessos()
                 .Where(p => p.EstadoId == cliente.EstadoId && p.ClienteId == cliente.Id);
         }
 
+        [HttpGet("{NumeroProcesso}")]
         public IEnumerable<Processo> GetProcessoPorNum(string NumeroProcesso)
         {
             return processoRepository.GetListaProcessos()
-                .Where(p => p.Numero.Contains(NumeroProcesso));
+                .Where(p => p.Numero.Contains(NumeroProcesso.ToUpper()));
         }
     }
 }

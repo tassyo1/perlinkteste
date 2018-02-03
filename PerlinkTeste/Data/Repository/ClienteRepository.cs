@@ -13,11 +13,7 @@ namespace PerlinkTeste.Data.Repository
         public ClienteRepository(IEstadoRepository estadoRepo)
         {
             this.estadoRepo = estadoRepo;
-            Clientes = new List<Cliente>()
-            {
-                new Cliente {Id = 1, Nome = "Empresa A", CNPJ = "00000000001", EstadoId = this.estadoRepo.GetEstadoPorNome("Rio de Janeiro").Id },
-                new Cliente {Id = 2, Nome = "Empresa B", CNPJ ="00000000001" , EstadoId = this.estadoRepo.GetEstadoPorNome("São Paulo").Id }
-            };
+            Clientes = new List<Cliente>();         
         }
 
         public IList<Cliente> GetAllClientes()
